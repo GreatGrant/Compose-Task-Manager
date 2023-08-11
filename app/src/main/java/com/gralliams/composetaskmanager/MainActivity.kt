@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -32,7 +33,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                    Greeting("Android")
                     TaskCard(title = getString(R.string.titlle), subtitle = getString(R.string.subtitle))
                 }
             }
@@ -69,19 +69,12 @@ fun TaskCard(title: String, subtitle: String, modifier: Modifier = Modifier){
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
 @Preview(showBackground = true,
     showSystemUi = true)
 @Composable
-fun GreetingPreview() {
+fun TaskManagerPreview() {
     ComposeTaskManagerTheme {
-        TaskCard(title = "All tasks completed", subtitle = "All tasks completed")
+        TaskCard(title = stringResource(R.string.title), subtitle = stringResource(id = R.string.subtitle))
     }
 }
